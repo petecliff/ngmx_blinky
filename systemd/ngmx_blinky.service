@@ -1,0 +1,12 @@
+[Unit]
+Description=Energy mix display on UnicornPHAT
+After=multi-user.target
+
+[Service]
+Type=idle
+WorkingDirectory=/home/pi/ngmx
+ExecStart=/usr/bin/python3 /home/pi/ngmx/blinky.py 
+
+[Install]
+WantedBy=multi-user.target
+
