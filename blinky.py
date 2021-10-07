@@ -17,8 +17,10 @@ logging.basicConfig(
 
 unicorn.set_layout(unicorn.AUTO)
 unicorn.rotation(0)
-unicorn.brightness(1.0)
+unicorn.brightness(0.5)
 width,height=unicorn.get_shape()
+
+light_order = ['wind', 'solar', 'hydro', 'gas', 'coal', 'nuclear', 'imports', 'biomass']
 
 class ServiceLoop:
     stopping = False
@@ -125,16 +127,14 @@ if __name__ == '__main__':
 
         generationmix = json['data'][0]['data'][0]['generationmix']
 
-        energy_types = []
+        energy_types = {}
 
         for mix in generationmix:
-            if 'other' in mix['fuel']:
-                continue
-
-            energy_types.append(EnergyType(mix['fuel'], mix['perc']))
+            energy_types[mix['fuel']] = EnergyType(mix['fuel'], mix['perc'])
 
         x = 0
-        for energy_type in energy_types:
+        for fuel in light_order:
+            energy_type = energy_types[fuel]
             logging.info('{:s} => {:d}%'.format(energy_type.name, energy_type.percent))
             lights = energy_type.getLights()
             if len(lights) > 0:

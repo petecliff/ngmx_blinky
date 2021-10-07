@@ -16,6 +16,7 @@ It is also a good conversation starter on the energy mix on the grid. Armed with
 information you can make good choices about when to do things - put the washing machine on
 when the sun is high e.g.
 
-But don't feel bad about that late night cuppa fuelled by gas. Just be aware.
+But don't feel bad about that late night cuppa fuelled by gas.
 
 Next step - break the washing machine - https://www.youtube.com/watch?v=WtgMESLjLoQ ? ;-)
+
