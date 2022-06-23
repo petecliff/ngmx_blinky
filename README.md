@@ -15,6 +15,8 @@ and so on up to 100% being all four LEDs in that row on full.
 
 ![The Pi Zero showing grid intensity on a Unicorn pHAT](pi.jpg?raw=true "The Pi Zero showing grid intensity on a Unicorn pHAT")
 
+Here you can see some solar (yellow), some gas (blue) and some nuclear (pink). If any coal was burning that'd be bright red!
+
 ## Why?
 Why not? :-)
 
