@@ -111,7 +111,7 @@ class EnergyType:
 
 
 url = "https://api.carbonintensity.org.uk/regional/regionid/" 
-region_code = "11"
+region_code = "12"
 refresh_time = 1800
 headers = {'Accept': 'application/json', 'User-Agent': 'curl/7.53'}
 
@@ -121,7 +121,13 @@ if __name__ == '__main__':
     while not service_loop.stopping:
         logging.info("Updating intensity data")
         get_request = url + region_code
-        response = requests.get(url + region_code, headers = headers)
+
+        try:
+            response = requests.get(url + region_code, headers = headers)
+        except:
+            logging.error("Failed to get light data - trying again in a minute")
+            sleep(60)
+            response = requests.get(url + region_code, headers = headers)
 
         json = response.json()
 
